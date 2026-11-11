@@ -78,7 +78,7 @@ class StudentDatabaseHelper(context: Context) : SQLiteOpenHelper(context, "stude
     //delete
     fun deleteStudent(id: Int) {
         writableDatabase.delete(
-            "student", "id= ?", arrayOf(id.toString())
+            "students", "id= ?", arrayOf(id.toString())
         )
     }
 }

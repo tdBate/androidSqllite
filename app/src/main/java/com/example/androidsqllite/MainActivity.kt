@@ -189,6 +189,18 @@ fun StudentScreen() {
                                     age = student.age.toString()
                                 }
                             ) { Text("Szerkesztés") }
+
+                            TextButton(
+                                onClick = {
+                                    db.deleteStudent(student.id)
+                                    students = db.getALlStudents()
+                                    if (editingId == student.id) {
+                                        editingId = null
+                                        name = ""
+                                        age = ""
+                                    }
+                                }
+                            ) { Text("Törlés") }
                         }
                     }
                 }
